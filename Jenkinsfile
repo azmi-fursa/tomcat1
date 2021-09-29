@@ -25,4 +25,4 @@ archiveArtifacts artifacts: '**/*.war', followSymlinks: false
 					}
 
 }
-}
+
