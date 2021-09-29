@@ -1,28 +1,21 @@
 pipeline
 {
-agent {label 'slave'}
+	agent {label 'slave'}
 
-stages{
+	stages{	
 	
-stage('Clone and Build Project'){
-	steps{
-		git 'https://github.com/jleetutorial/maven-project.git'
-		sh "pwd"
-		dir ('maven-project'){
-		sh "pwd"
-		}
+		stage('Clone and Build Project'){
+			steps{
+				git 'https://github.com/jleetutorial/maven-project.git'
+				sh "pwd"
+				dir ('maven-project'){
+				sh "pwd"
+						     }
 
-sh 'mvn clean install'
-archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-}
-		     }
-stage('Copy WAR artifacts'){
-        steps{
-                copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, p>
-      }
-
-		
-			}
-
+				sh 'mvn clean install'
+				archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+			     }
+		     				 }
+	      }
 }
 
