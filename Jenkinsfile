@@ -21,7 +21,11 @@ pipeline
 				copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: 'maven_pipeline', selector: lastSuccessful()
 			}
 		}
-		      
+		stage('Deploy Artifacts'){
+			steps{
+				deploy adapters: [tomcat9(credentialsId: 'e03fd0c0-c335-43b6-bdf5-9f4a2bf70fb6', path: '', url: 'http://http://54.229.159.214:8888/')], contextPath: null, war: '**/*.war'
+		      	}
+			}
 	}
 }
 
