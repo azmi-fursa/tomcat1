@@ -15,6 +15,7 @@ stage('Clone and Build Project'){
 script {
 "./mvnw package"
       }
+}
 		     }
 stage('Archive Artifacts'){
 steps{
