@@ -15,8 +15,12 @@ stage('Clone and Build Project'){
 script {
 "./mvnw package"
       }
-archiveArtifacts artifacts: '**/*.war', followSymlinks: false
 		     }
+stage ('Archive Artifacts'){
+steps{
+archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+}
+}
 					}
 
 }
