@@ -13,8 +13,8 @@ stage('Clone and Build Project'){
 		}
 
 sh 'mvn clean install'
-}
 archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+}
 		     }
 					}
 
