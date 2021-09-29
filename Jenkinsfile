@@ -20,7 +20,6 @@ stage('Copy WAR artifacts'){
         steps{
                 copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, p>
       }
-}
 
 		
 			}
