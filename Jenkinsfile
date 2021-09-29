@@ -12,10 +12,9 @@ stage('Clone and Build Project'){
 		sh "pwd"
 		}
 
-script {
-"./mvnw package"
-      }
+sh 'mvn clean install'
 }
+archiveArtifacts artifacts: '**/*.war', followSymlinks: false
 		     }
 					}
 
