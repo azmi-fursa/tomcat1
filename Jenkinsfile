@@ -23,9 +23,10 @@ pipeline
 		}
 		stage('Deploy Artifacts'){
 			steps{
-				deploy adapters: [tomcat9(credentialsId: 'e03fd0c0-c335-43b6-bdf5-9f4a2bf70fb6', path: '', url: 'https://172.31.15.52:8888/')], contextPath: null, war: '**/*.war'				
+		deploy adapters: [tomcat9(credentialsId: 'e03fd0c0-c335-43b6-bdf5-9f4a2bf70fb6', path: '', url: 'https://172.31.15.52:8888/')], contextPath: null, war: '**/*.war'
 		      	}
 			}
 	}
 }
+
 
