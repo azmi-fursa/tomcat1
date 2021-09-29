@@ -18,7 +18,7 @@ pipeline
 
 		stage('Copy Artifacts'){
 			steps{
-				copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, p>
+				copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: 'maven_pipeline', selector: lastSuccessful()
 			}
 		}
 		      
