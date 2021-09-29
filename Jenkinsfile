@@ -16,7 +16,7 @@ script {
 "./mvnw package"
       }
 		     }
-stage ('Archive Artifacts'){
+stage('Archive Artifacts'){
 steps{
 archiveArtifacts artifacts: '**/*.war', followSymlinks: false
 }
