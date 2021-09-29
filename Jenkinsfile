@@ -17,11 +17,6 @@ script {
       }
 }
 		     }
-stage('Archive Artifacts'){
-steps{
-archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-}
-}
 					}
 
 }
