@@ -15,7 +15,12 @@ pipeline
 				sh 'mvn clean install'
 				archiveArtifacts artifacts: '**/*.war', followSymlinks: false
 			     }
-		     				 }
-	      }
+						 }
+		stage('Copy Artifacts'){
+			steps{
+				copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, p>
+			     }
+					}	      
+}
 }
 
