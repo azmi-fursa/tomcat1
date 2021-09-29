@@ -17,5 +17,11 @@ script {
       }
 		     }
 					}
+
+stage('Copy WAR artifacts'){
+	steps{
+		copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: 'maven_pipeline', selector: lastSuccessful()
       }
+}
+}
 }
